@@ -1,7 +1,7 @@
 node {
   def remote = [:]
-  remote.name = 'vm_ansible'
-  remote.host = 'vm_ansible'
+  remote.name = '192.168.1.107'
+  remote.host = '192.168.1.107'
   remote.user = 'root'
   remote.password = 'P@ssw0rd'
   remote.allowAnyHosts = true
