@@ -9,7 +9,6 @@ pipeline {
     stages {
         stage('remote') {
             steps {
-                stage('Remote SSH') {
                 sshCommand remote: remote, command: "mkdir project_web"
                 sshCommand remote: remote, command: "cd project_web"
                 sshCommand remote: remote, command: "yum update -y"
@@ -22,6 +21,5 @@ pipeline {
                }
             }
         }
-    }
 }
 
