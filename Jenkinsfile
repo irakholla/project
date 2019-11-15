@@ -8,6 +8,7 @@ pipeline {
     agent any
     stages {
         stage('remote') {
+           steps {
             sshCommand remote: remote, command: "mkdir project_web"
             sshCommand remote: remote, command: "cd project_web"
             sshCommand remote: remote, command: "yum update -y"
@@ -17,6 +18,7 @@ pipeline {
             sshCommand remote: remote, command: "git pull https://github.com/irakholla/project.git"
             sshCommand remote: remote, command: "chmod '+x' jen/pipeline.sh"
             sshCommand remote: remote, command: "jen/pipeline.sh"
+           }
         }
     }
 }
