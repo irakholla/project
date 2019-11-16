@@ -1,7 +1,7 @@
 FROM centos:7
 WORKDIR /devops
 COPY . .
-RUN yum update -y
+RUN yum update -nobest -y
 RUN yum install python3 -y
 RUN yum install git -y
 RUN git init
