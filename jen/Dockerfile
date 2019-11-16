@@ -1,11 +1,11 @@
 FROM centos:7
 WORKDIR /devops
-COPY nginx.conf /devops/nginx.conf
-COPY my_password.txt /devops/my_password.txt
-COPY nginx.repo  /devops/nginx.repo
-COPY pipeline.sh /devops/pipeline.sh
-COPY ps.sh /devops/ps.sh
-COPY web.sh /devops/web.sh
+COPY jen/nginx.conf /devops/nginx.conf
+COPY jen/my_password.txt /devops/my_password.txt
+COPY jen/nginx.repo  /devops/nginx.repo
+COPY jen/pipeline.sh /devops/pipeline.sh
+COPY jen/ps.sh /devops/ps.sh
+COPY jen/web.sh /devops/web.sh
 RUN yum update -y
 RUN yum install python3 -y
 RUN yum install git -y
