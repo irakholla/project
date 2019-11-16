@@ -10,7 +10,7 @@ pipeline {
         stage('remote') {
            steps {
             sshCommand remote: remote, command: "mkdir project_web"
-            sshCommand remote: remote, command: "cd project_web"
+            sshCommand remote: remote, command: "pushd project_web"
             sshCommand remote: remote, command: "yum update -y"
             sshCommand remote: remote, command: "yum install python3 -y"
             sshCommand remote: remote, command: "yum install git -y"
