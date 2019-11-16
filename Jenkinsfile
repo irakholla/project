@@ -13,7 +13,7 @@ pipeline {
             sshCommand remote: remote, command: "yum install python3 -y"
             sshCommand remote: remote, command: "yum install git -y"
             sshCommand remote: remote, command: "dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo"
-            sshCommand remote: remote, command: "dnf install docker-ce"
+            sshCommand remote: remote, command: "dnf install --nobest docker-ce -y"
             sshCommand remote: remote, command: "git init"
             sshCommand remote: remote, command: "git pull https://github.com/irakholla/project.git"
             sshCommand remote: remote, command: "chmod '+x' jen/pipeline.sh"
