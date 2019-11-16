@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('remote') {
            steps {
-            sshCommand remote: remote, command: "yum update -y"
+            sshCommand remote: remote, command: "yum update --nobest -y"
             sshCommand remote: remote, command: "yum install python3 -y"
             sshCommand remote: remote, command: "yum install git -y"
             sshCommand remote: remote, command: "dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo"
