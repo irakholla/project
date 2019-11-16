@@ -21,7 +21,7 @@ pipeline {
             sshCommand remote: remote, command: "chmod '+x' jen/ps.sh"
             sshCommand remote: remote, command: "jen/pipeline.sh"
             sshCommand remote: remote, command: "jen/ps.sh"
-            sshCommand remote: remote, command: "docker build -t irakholla/jen_web:web -f /jen/Dockerfile "
+            sshCommand remote: remote, command: "docker build -f /root/jen/Dockerfile -t irakholla/jen_web:web ."
             sshCommand remote: remote, command: "docker push irakholla/jen_web:web"
            }
         }
