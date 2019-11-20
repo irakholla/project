@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('remote') {
            steps {
-            sshCommand remote: remote, command: "yum update --nobest -y; yum install python3 -y; yum install git -y; dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo; dnf install --nobest docker-ce -y; systemctl enable --now docker; git init; git pull https://github.com/irakholla/project.git; chmod '+x' jen/pipeline.sh; chmod '+x' jen/ps.sh; jen/pipeline.sh; jen/ps.sh"
+            sshCommand remote: remote, command: "yum update --nobest -y; yum install python3 -y; yum install git -y; dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo; dnf install --nobest docker-ce -y; systemctl enable --now docker; git init; git pull https://github.com/irakholla/project.git; chmod '+x' jen/pipeline.sh; jen/pipeline.sh"
            }
         }
         stage('build') {
