@@ -6,7 +6,7 @@ def remote = [:]
                 remote.allowAnyHosts = true
 pipeline {
     environment {
-        registry = "irakholla/jen_web"
+        registry = "irakholla/jen_web:web"
         registryCredential = 'dockerhub_login'
     }
     agent any
@@ -19,16 +19,16 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                     dockerImage = docker.build registry + ":web"
+                    dockerImage = docker.build registry
                 }
             }
         }
         stage('push') {
             steps {
                 script {
-                     docker.withRegistry( '', registryCredential ) {
-                     dockerImage.push()
-                     }
+                    docker.withRegistry( '', registryCredential ) {
+                    dockerImage.push()
+                    }
                 } 
             }
         }
