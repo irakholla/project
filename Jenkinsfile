@@ -23,12 +23,11 @@ pipeline {
         }
         stage('push') {
             steps {
-             docker.withRegistry( '', registryCredential ) {
+             docker.withRegistry( '', registryCredential )
              dockerImage.push()
            //sshCommand remote: remote, command: "docker build -t irakholla/jen_web:web . -f /root/jen/Dockerfile"
            //sshCommand remote: remote, command: "docker push irakholla/jen_web:web"
-           }
+            }
         }
     }
 }
-
